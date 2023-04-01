@@ -11,6 +11,7 @@ int maxLength(vector<int>&ribbons,int k)
     else
     {
       en=mid;
+    }
   }
     return (st==0 ?-1:st);
 } 
@@ -21,5 +22,5 @@ bool check(int o,vector<int>&r,int k)
   {
     ans+=r[i]/o;
   }
-  return (ans==k);
+  return (ans>=k);
 }
