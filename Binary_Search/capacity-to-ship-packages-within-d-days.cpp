@@ -14,7 +14,7 @@ bool check(vector<int>&w,int o,int k)
 {
   int ans=0;
   int z=0;
-  for (int i=0;i<n;i++)
+  for (int i=0;i<w.size();i++)
   {
     z+=w[i];
     if (w[i]>=o)
