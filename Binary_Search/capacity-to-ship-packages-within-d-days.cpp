@@ -23,5 +23,5 @@ bool check(vector<int>&w,int o,int k)
       z=0;
     }
   }
-  return (ans==k);
+  return (ans>=k);
 } 
