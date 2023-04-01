@@ -17,7 +17,7 @@ bool check(vector<int>&w,int o,int k)
   for (int i=0;i<n;i++)
   {
     z+=w[i];
-    if (w[i]>=0)
+    if (w[i]>=o)
     {
       ans++;
       z=0;
