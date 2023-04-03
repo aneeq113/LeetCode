@@ -1,3 +1,4 @@
+//NOT CORRET YET
 int getIndex(ArrayReader &reader) {
   int st=0,en=reader.length()+1;
   while (st+1<en)
