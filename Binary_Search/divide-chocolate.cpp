@@ -16,11 +16,11 @@ bool check(int o,vector<int>& s,int k)
   for (int i=0;i<s.size();i++)
   {
     z+=a[i];
-    if (z>o)
+    if (z>=o)
     {
       ans++;
       z=0;
     }
   }
-  return (ans>=k);
+  return (ans>=k+1);
 }
