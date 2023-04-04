@@ -1,29 +1,25 @@
 int shipWithinDays(vector<int>& we, int d) {
-        int st=0,en=2.5e7,mid;
+        int st=*max_element(begin(we),end(we))-1,en=1e9+10;
+        int z,i,k;
+        int n=we.size();
         while (st+1<en)
         {
-            mid=(st+en)/2;
-            if (check(we,d,mid))
+            int mid=(st+en)/2;
+            z=0,k=0;
+            for (int i=0;i<n;i++)
+            {
+                if (z+we[i]>mid)
+                {
+                    k++;
+                    z=0;
+                }
+                z+=we[i];
+            }
+            k+=(z>0);
+            if (k<=d)
                 en=mid;
             else
                 st=mid;
         }
         return st+1;
-    }
-    bool check(vector<int>&we,int d,int ans)
-    {
-        int z=0,i=0;
-        while (d&&i<we.size())
-        {
-            if (z+we[i]>ans)
-            {
-                d--;
-                z=0;
-            }
-            else
-            {
-                z+=we[i++];
-            }
-        }
-      return (i==w.size());
     }
