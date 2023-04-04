@@ -1,27 +1,29 @@
-int shipWithinDays(vector<int>& weights, int days) {
-  int st=0,en=weights.size()+1;
-  while (st+1<en)
-  {
-    int mid=(st+en)/2;
-    if (check(weights,mid,days))
-      st=mid;
-    else
-      en=mid;
-  }
-  return st;
-}
-bool check(vector<int>&w,int o,int k)
-{
-  int ans=0;
-  int z=0;
-  for (int i=0;i<w.size();i++)
-  {
-    z+=w[i];
-    if (w[i]>=o)
-    {
-      ans++;
-      z=0;
+int shipWithinDays(vector<int>& we, int d) {
+        int st=0,en=2.5e7,mid;
+        while (st+1<en)
+        {
+            mid=(st+en)/2;
+            if (check(we,d,mid))
+                en=mid;
+            else
+                st=mid;
+        }
+        return st+1;
     }
-  }
-  return (ans>=k);
-} 
+    bool check(vector<int>&we,int d,int ans)
+    {
+        int z=0,i=0;
+        while (d&&i<we.size())
+        {
+            if (z+we[i]>ans)
+            {
+                d--;
+                z=0;
+            }
+            else
+            {
+                z+=we[i++];
+            }
+        }
+      return (i==w.size());
+    }
